@@ -117,9 +117,9 @@ Finally we launch Router:
 
 ```elm
 
-main : Program Never
+main : Program Never State (Router.Types.Action State)
 main = Router.dispatch
-  (always <| noFx initialState)
+  (noFx initialState)
   (RouterConfig {
     html5 = False
   , removeTrailingSlash = True
